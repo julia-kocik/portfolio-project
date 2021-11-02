@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Canvas} from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import { Box } from '../../common/Box/Box';
 
 import clsx from 'clsx';
@@ -17,6 +18,7 @@ const Component = ({className}) => (
     >
       <ambientLight intensity={0.5} />
       <spotLight position={[15, 20, 5]} penumbra={1} castShadow />
+      <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
       <Box/>
     </Canvas>
   </div>
