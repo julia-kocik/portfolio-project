@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { Box } from '../../common/Box/Box';
 //import { Plane } from '../../layout/Plane/Plane';
+//import {Link} from 'react-router-dom';
 
 
 import clsx from 'clsx';
@@ -16,7 +17,7 @@ import styles from './Homepage.module.scss';
 const Component = ({className}) => (
   <div className={clsx(className, styles.root)}>
     <Canvas
-      camera={{ position: [0, 3, 8] }}
+      camera={{ position: [-1, 4, 8] }}
       className={styles.canvas}
     >
       <ambientLight intensity={0.5} />
