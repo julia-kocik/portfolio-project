@@ -8,7 +8,7 @@ import { useSpring, animated } from '@react-spring/three';
 
 //import styles from './Box.module.scss';
 
-const Component = () => {
+const Component = ({args, position}) => {
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
   const props = useSpring({
@@ -23,8 +23,9 @@ const Component = () => {
       onClick={() => setActive(!active)}
       castShadow
       scale={props.scale}
+      position={position}
     >
-      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
+      <boxBufferGeometry attach="geometry" args={args} />
       <animated.meshPhysicalMaterial attach="material" color={props.color}/>
     </animated.mesh>
   );
@@ -35,6 +36,8 @@ Component.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string, 
   scale: PropTypes.array,
+  args: PropTypes.array,
+  position: PropTypes.array,
 };
 
 // const mapStateToProps = state => ({
