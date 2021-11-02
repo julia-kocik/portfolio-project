@@ -1,5 +1,23 @@
 @import "settings.scss";
 
+//GLOBAL
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html,
+body, 
+canvas {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background: pink;
+}
+
 //RWD//
 $max-tablet-width: 1024px;
 $min-tablet-width: 577px;
@@ -16,3 +34,4 @@ $max-mobile-width: 576px;
     @content;
   }
 }
+
