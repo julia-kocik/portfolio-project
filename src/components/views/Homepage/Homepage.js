@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import PropTypes from 'prop-types';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { Box } from '../../common/Box/Box';
 //import { Plane } from '../../layout/Plane/Plane';
 //import {Link} from 'react-router-dom';
+import mercury from '../../../images/mercury.jpg';
+import mars from '../../../images/mars.jpg';
+import globe from '../../../images/globe.jpg';
+import neptun from '../../../images/neptun.jpg';
+
 
 
 import clsx from 'clsx';
@@ -20,13 +25,21 @@ const Component = ({className}) => (
       camera={{ position: [-1, 4, 8] }}
       className={styles.canvas}
     >
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={1} />
       <spotLight position={[15, 20, 5]} penumbra={1} castShadow />
       <OrbitControls autoRotate autoRotateSpeed={0.3} enablePan={true} enableZoom={true} enableRotate={true} />
-      <Box args={[1, 1, 1]} position={[0, 1, -5]}/>
-      <Box args={[1, 1, 1]} position={[0, 1, 2]}/>
-      <Box args={[1, 1, 1]} position={[-4, 1, 0]}/>
-      <Box args={[1, 1, 1]} position={[4, 1, 0]}/>
+      <Suspense fallback={null}>
+        <Box args={[1, 100, 100]} position={[0, 1, -5]} image={mercury}/>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Box args={[1, 100, 100]} position={[0, 1, 2]} image={mars}/>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Box args={[1, 100, 100]} position={[-4, 1, 0]} image={globe}/>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Box args={[1, 100, 100]} position={[4, 1, 0]} image={neptun}/>
+      </Suspense>
       <Stars
         radius={100} // Radius of the inner sphere (default=100)
         depth={50} // Depth of area where stars should fit (default=50)

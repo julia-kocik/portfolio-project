@@ -1,19 +1,22 @@
+import * as THREE from 'three';
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 //import clsx from 'clsx';
 import { useSpring, animated } from '@react-spring/three';
+import { useLoader } from '@react-three/fiber';
+import img from '../../../images/globe.jpg';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 //import styles from './Box.module.scss';
 
-const Component = ({args, position}) => {
+const Component = ({args, position, image}) => {
+  const texture = useLoader(THREE.TextureLoader, image);
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
   const props = useSpring({
-    scale: active ? [1.5, 1.5, 1.5] : [1, 1, 1],
-    color: hovered ? 'hotpink' : 'gray',
+    scale: hovered ? [1.2, 1.2, 1.2] : [1, 1, 1],
   });
 
   return (
@@ -25,15 +28,14 @@ const Component = ({args, position}) => {
       scale={props.scale}
       position={position}
     >
-      <boxBufferGeometry attach="geometry" args={args} />
-      <animated.meshPhysicalMaterial attach="material" color={props.color}/>
+      <sphereGeometry attach="geometry" args={args} />
+      <animated.meshPhysicalMaterial attach="material"  map={texture}/>
     </animated.mesh>
   );
 };
 
 Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+  image: PropTypes.string,
   color: PropTypes.string, 
   scale: PropTypes.array,
   args: PropTypes.array,
