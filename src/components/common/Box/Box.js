@@ -23,7 +23,7 @@ const Component = ({args, position, image, redirect}) => {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={redirect}
-      castShadow
+      receiveShadow 
       scale={props.scale}
       position={position}
       className={styles.pointer}
