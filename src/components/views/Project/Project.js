@@ -1,37 +1,75 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { getProjectDetails } from '../../../redux/actions/projectActions';
+import {Button } from '../../common/Button/Button';
+
 
 import styles from './Project.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Project</h2>
-    {children}
-  </div>
-);
-
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+const Component = ({className, getProject, project, loading, error}) => {
+  const [show, setShow] = useState(false);
+  const effects = [styles.project];
+  useEffect(() => {
+    window.scrollTo(0,0);
+    setTimeout(() => setShow(true), 500);
+    getProject();
+  }, [getProject]);
+  if(show) {
+    effects.push(styles.show);
+  }
+  return (
+    <div className={clsx(className, styles.root)}>
+      {(loading || loading === undefined) ? (
+        <h2>Loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <div className={effects.join(' ')}>
+          <div className={styles.projectLeft}>
+            <h1 className={styles.titleProject}>{project.title}</h1>
+          </div>
+          <div className={styles.projectRight}>
+            <div className={styles.content}>
+              <h2 className={styles.descriptionProjects}>Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
+              <h2 className={styles.stackProjects}>Tech Stack: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+            </div>
+            <div className={styles.links}>
+              <Button src={project.src} title="Demo" className={styles.btnProjects}/>          
+              <Button src={project.src} title="GitHub" className={styles.btnProjects}/> 
+            </div>         
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+Component.propTypes = {
+  className: PropTypes.string,
+  getProject: PropTypes.func, 
+  project: PropTypes.object,
+  loading: PropTypes.bool,
+  error: PropTypes.object,
+};
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapStateToProps = state => ({
+  project: state.projectRequest.project,
+  loading: state.projectRequest.loading,
+  error: state.projectRequest.error,
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const mapDispatchToProps = (dispatch, props) => ({
+  getProject: () => dispatch(getProjectDetails(props.match.params.id)),
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Project,
-  // Container as Project,
+  //Component as Project,
+  Container as Project,
   Component as ProjectComponent,
 };
