@@ -21,7 +21,7 @@ const App = () => (
     >
       <Route exact path='/' component={Homepage} />
       <Route exact path='/home' component={Homepage} />
-      <Route exact path='/project' component={Project} />
+      <Route exact path='/project/:id' component={Project} />
     </AnimatedSwitch>
   </Provider>
 );
