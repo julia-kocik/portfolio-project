@@ -34,8 +34,8 @@ const Component = ({className, getProject, project, loading, error}) => {
           </div>
           <div className={styles.projectRight}>
             <div className={styles.content}>
-              <h2 className={styles.descriptionProjects}>Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
-              <h2 className={styles.stackProjects}>Tech Stack: Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+              <h2 className={styles.descriptionProjects}>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
+              <h2 className={styles.stackProjects}>Stack: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
             </div>
             <div className={styles.links}>
               <Button src={project.src} title="Demo" className={styles.btnProjects}/>          

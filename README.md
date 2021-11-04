@@ -21,6 +21,7 @@ frontend start:
 
 - @reactJS
 - @react-hooks
+- @react-three-fiber
 - @redux
 - @redux-thunk
 - @expressJS
