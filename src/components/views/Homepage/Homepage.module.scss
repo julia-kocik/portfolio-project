@@ -1,8 +1,9 @@
 @import '../../../styles/settings.scss';
 
+
 .root {
+    height: 100vh;
     .canvas {
-        height: 100vh;
         transition: 5s all;
     }
 }

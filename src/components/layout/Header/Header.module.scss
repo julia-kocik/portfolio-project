@@ -1,0 +1,54 @@
+@import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
+
+.root {
+    position: sticky;
+    bottom: 0;
+    height: 80px;
+    background: $color-black;
+    color: $color-white;
+    display: flex;
+    .leftBox {
+        flex: 0 0 50%;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        h1 {
+            padding-left: 30px;
+        }
+    }
+    .rightBox {
+        flex: 0 0 50%;
+        justify-content: center;
+        align-items: center;
+        .link {
+            display: inline-flex;
+            height: 100%;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 30px;
+            .icon {
+                cursor: pointer;
+                color: $color-white;
+                transition: 4s all;
+                font-size: 32px;
+                &:hover {
+                    transform: scale(1.6);
+                }
+            }
+        }
+    }
+}
+
+
+@include mobile {
+    .root {
+        .leftBox {
+            align-items: center;
+            h1 {
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ const projects = [
     title: 'E-commerce Store',
     src: 'https://pet-store123.herokuapp.com/',
     args: [0.5, 100, 100],
-    position: [-10, -3, 0],
+    position: [-7, 1, 4],
     image: '/static/media/mercury.6e282533.jpg',
   },
   {

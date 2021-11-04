@@ -1,20 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
 
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-import styles from './MainLayout.module.scss';
+import styles from './Header.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <Header/>
-    {children}
-    <Footer/>
+    <div className={styles.leftBox}>
+      <h1>Julia Kocik Portfolio</h1>
+    </div>
+    <div className={styles.rightBox}>
+      <Link to="/home" className={styles.link}>
+        <FontAwesomeIcon className={styles.icon} icon={faHome} />
+      </Link>
+    </div>
   </div>
 );
 
@@ -34,7 +40,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as MainLayout,
-  // Container as MainLayout,
-  Component as MainLayoutComponent,
+  Component as Header,
+  // Container as Header,
+  Component as HeaderComponent,
 };

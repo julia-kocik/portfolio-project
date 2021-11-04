@@ -1,15 +1,16 @@
 @import '../../../styles/settings.scss';
+@import '../../../styles/global.scss';
 
 .root {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 75vh;
     .project {
         border: 3px solid $color-white;
         border-radius: 5px;
         width: 80%;
-        height: 60%;
+        height: 70%;
         display: flex;
         color: $color-white;
         transform: translateX(-120%);
@@ -44,5 +45,63 @@
     .show {
         transform: translateX(0%);
         transition: $transition;
+    }
+}
+
+
+@include tablet {
+    .root {
+        height: 85vh;
+        .project {
+            flex-direction: column;
+            height: 80%;
+            .projectLeft {
+                border-bottom: 3px solid $color-white;
+                border-right: none;
+            }
+            .projectRight {
+                .content {
+                    font-size: 18px;
+                    padding: 20px 30px;
+                }
+                .links {
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .root {
+        height: 180vh;
+        align-items: flex-start;
+        margin-top: 40px;
+        .project {
+            flex-direction: column;
+            height: 80%;
+            .projectLeft {
+                border-bottom: 3px solid $color-white;
+                border-right: none;
+            }
+            .projectRight {
+                .content {
+                    font-size: 18px;
+                    padding: 20px 30px;
+                }
+                .links {
+                    justify-content: center;
+                    margin-right: 0px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 0 0 30%;
+                    .btnProjects {
+                        height: 50%;
+                    }
+                }
+            }
+        }
     }
 }

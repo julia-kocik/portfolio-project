@@ -1,25 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
 
 import clsx from 'clsx';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './MainLayout.module.scss';
+import styles from './Footer.module.scss';
 
-const Component = ({className, children}) => (
+const Component = ({className}) => (
   <div className={clsx(className, styles.root)}>
-    <Header/>
-    {children}
-    <Footer/>
+    <div className={styles.spanBox}>
+      <span>1. Move around</span>
+      <span>2. Zoom in/out</span>
+      <span>3. Pick a planet</span>
+    </div>
   </div>
 );
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
 };
 
@@ -34,7 +33,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as MainLayout,
-  // Container as MainLayout,
-  Component as MainLayoutComponent,
+  Component as Footer,
+  // Container as Footer,
+  Component as FooterComponent,
 };
