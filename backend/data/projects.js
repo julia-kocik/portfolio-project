@@ -52,7 +52,7 @@ const projects = [
     title: 'Neptun',
     src: 'https://fast-basin-92049.herokuapp.com/',
     args: [1, 100, 100],
-    position: [16, 6, 5],
+    position: [20, 6, 5],
     image: 'https://i.postimg.cc/XYhZ6RYX/neptun.jpg',
   },
 ];

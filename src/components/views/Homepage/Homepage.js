@@ -51,7 +51,7 @@ const Component = ({className, getProjects, projects, loading, error}) => {
           <spotLight position={[-50, 50, 0]} penumbra={1} castShadow />
           <OrbitControls autoRotate autoRotateSpeed={0.4} enablePan={true} enableZoom={true} enableRotate={true} />
           <Suspense fallback={null}>
-            <Sun args={[300, 100, 100]} position={[-700, -1, 5]} image='https://i.postimg.cc/pTPs2p2L/sun.jpg'/>
+            <Sun args={[500, 100, 100]} position={[-1000, -1, 5]} image='https://i.postimg.cc/pTPs2p2L/sun.jpg'/>
           </Suspense>
           <Suspense fallback={null}>
             {projects.map((item) => (
