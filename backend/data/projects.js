@@ -24,7 +24,7 @@ const projects = [
     title: 'GitHub',
     src: 'https://github.com/julia-kocik',
     args: [0.7, 100, 100],
-    position: [0, 0, -5],
+    position: [1, 1, -5],
     image: 'https://i.postimg.cc/k4ND8DFt/mars.jpg',
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     title: 'Saturn',
     src: 'https://fast-basin-92049.herokuapp.com/',
     args: [1, 100, 100],
-    position: [15, -4, 0],
+    position: [11, 4, 0],
     image: 'https://i.postimg.cc/K84KVGFd/saturn.jpg',
   },
   {
