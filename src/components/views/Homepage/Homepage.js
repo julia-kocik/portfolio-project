@@ -20,16 +20,6 @@ import styles from './Homepage.module.scss';
   }, []);
 */
 
-import mercury from '../../../images/mercury.jpg';
-import venus from '../../../images/venus.jpg';
-import globe from '../../../images/globe.jpg';
-import mars from '../../../images/mars.jpg';
-import jupiter from '../../../images/jupiter.jpg';
-import saturn from '../../../images/saturn.jpg';
-import uran from '../../../images/uran.jpg';
-import neptun from '../../../images/neptun.jpg';
-
-
 const Component = ({className, getProjects, projects, loading, error}) => {
   useEffect(() => {
     window.scrollTo(0,0);
@@ -63,36 +53,10 @@ const Component = ({className, getProjects, projects, loading, error}) => {
           <Suspense fallback={null}>
             <Sun args={[300, 100, 100]} position={[-700, -1, 5]} image='https://i.postimg.cc/pTPs2p2L/sun.jpg'/>
           </Suspense>
-          {/*
           <Suspense fallback={null}>
             {projects.map((item) => (
               <Box key={item._id} args={item.args} position={item.position} image={item.image} redirect={() => window.appHistory.push(`/project/${item._id}`)}/>
             ))}
-          </Suspense>
-            */}
-          <Suspense fallback={null}>
-            <Box args={[0.3, 100, 100]} position={[-7, -1, 5]} image={mercury} redirect={() => window.appHistory.push('/project')}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[0.3, 100, 100]} position={[-5, 0, 5]} image={venus}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[0.6, 100, 100]} position={[-2, -1, 5]} image={globe}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[0.5, 100, 100]} position={[0, 1, 5]} image={mars}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[1.2, 100, 100]} position={[3, 2, 3]} image={jupiter}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[0.7, 100, 100]} position={[9, -1, 5]} image={saturn}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[1, 100, 100]} position={[14, 4, 3]} image={uran}/>
-          </Suspense>
-          <Suspense fallback={null}>
-            <Box args={[1, 100, 100]} position={[16, 6, 5]} image={neptun}/>
           </Suspense>
           <Stars
             radius={100} // Radius of the inner sphere (default=100)
