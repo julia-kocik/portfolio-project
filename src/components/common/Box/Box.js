@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 //import clsx from 'clsx';
 import { useSpring, animated } from '@react-spring/three';
-import { useLoader } from '@react-three/fiber';
+import { useFrame, useLoader } from '@react-three/fiber';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
@@ -11,6 +11,11 @@ import { useLoader } from '@react-three/fiber';
 //import styles from './Box.module.scss';
 
 const Component = ({args, position, image, redirect}) => {
+  //ref to target the mesh
+  const mesh = useRef();
+
+  //useFrame allows us to re-render/update rotation on each frame
+  useFrame(() => (mesh.current.rotation.x += 0.01));
   const texture = useLoader(THREE.TextureLoader, image);
   const [hovered, setHovered] = useState(false);
   //const [active, setActive] = useState(false);
@@ -20,6 +25,7 @@ const Component = ({args, position, image, redirect}) => {
 
   return (
     <animated.mesh
+      ref={mesh}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={redirect}
