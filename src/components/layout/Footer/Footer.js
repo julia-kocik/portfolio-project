@@ -11,9 +11,9 @@ import styles from './Footer.module.scss';
 const Component = ({className}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.spanBox}>
-      <span>1. Move around</span>
-      <span>2. Zoom in/out</span>
-      <span>3. Pick a planet</span>
+      <span>- move around</span>
+      <span>- zoom in/out</span>
+      <span>- pick a planet</span>
     </div>
   </div>
 );

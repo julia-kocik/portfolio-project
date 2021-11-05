@@ -15,7 +15,7 @@ const Component = ({args, position, image, redirect}) => {
   const mesh = useRef();
 
   //useFrame allows us to re-render/update rotation on each frame
-  useFrame(() => (mesh.current.rotation.x += 0.01));
+  useFrame(() => (mesh.current.rotation.y -= 0.01));
   const texture = useLoader(THREE.TextureLoader, image);
   const [hovered, setHovered] = useState(false);
   //const [active, setActive] = useState(false);
