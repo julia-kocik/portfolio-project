@@ -61,7 +61,7 @@ const Component = ({className, getProjects, projects, loading, error}) => {
           <Stars
             radius={400} // Radius of the inner sphere (default=100)
             depth={100} // Depth of area where stars should fit (default=50)
-            count={5000} // Amount of stars (default=5000)
+            count={4000} // Amount of stars (default=5000)
             factor={15} // Size factor (default=4)
             saturation={0.2} // Saturation 0-1 (default=0)
             fade // Faded dots (default=false)

@@ -14,7 +14,8 @@ import styles from './Header.module.scss';
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
     <div className={styles.leftBox}>
-      <h1>Julia Kocik Portfolio</h1>
+      <h2>Junior Web Developer</h2>
+      <h2>Julia Kocik</h2>
     </div>
     <div className={styles.rightBox}>
       <Link to="/home" className={styles.link}>

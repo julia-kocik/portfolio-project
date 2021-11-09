@@ -8,13 +8,25 @@
     background: $color-black;
     color: $color-white;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    .mediaBox {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        a {
+            text-decoration: none;
+            color: $color-white;
+            &:hover {
+                color: $color-violet;
+            }
+        }
+    }
     .spanBox {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        margin-right: 20px;
     }
 }
