@@ -34,12 +34,11 @@ const Component = ({className, getProject, project, loading, error}) => {
           </div>
           <div className={styles.projectRight}>
             <div className={styles.content}>
-              <h2 className={styles.descriptionProjects}>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
-              <h2 className={styles.stackProjects}>Stack: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+              <h2 className={styles.stackProjects}>Stack: {project.stack}</h2>
             </div>
             <div className={styles.links}>
-              <Button src={project.src} title="Demo" className={styles.btnProjects}/>          
-              <Button src={project.src} title="GitHub" className={styles.btnProjects}/> 
+              <Button src={project.demo} title="Demo" className={styles.btnProjects}/>          
+              <Button src={project.github} title="GitHub" className={styles.btnProjects}/> 
             </div>         
           </div>
         </div>
