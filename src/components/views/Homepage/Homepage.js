@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import { Box } from '../../common/Box/Box';
 import { Sun } from '../../common/Sun/Sun';
+import { Ring} from '../../common/Ring/Ring';
 //import { Plane } from '../../layout/Plane/Plane';
 import { getProjects } from '../../../redux/actions/projectActions';
 import { connect } from 'react-redux';
@@ -52,6 +53,9 @@ const Component = ({className, getProjects, projects, loading, error}) => {
           <OrbitControls autoRotate autoRotateSpeed={0.4} enablePan={true} enableZoom={true} enableRotate={true} />
           <Suspense fallback={null}>
             <Sun args={[500, 100, 100]} position={[-1000, -1, 5]} image='https://i.postimg.cc/pTPs2p2L/sun.jpg'/>
+          </Suspense>
+          <Suspense fallback={null}>
+            <Ring args={[1, 2, 100]} position={[9, -1, 5]} image='https://i.postimg.cc/XYhZ6RYX/neptun.jpg'/>
           </Suspense>
           <Suspense fallback={null}>
             {projects.map((item) => (

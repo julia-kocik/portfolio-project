@@ -10,7 +10,7 @@ import styles from './Button.module.scss';
 
 const Component = ({className, src, title}) => (
   <div className={clsx(className, styles.root)}>
-    <a className={styles.btn} href={src}>{title}</a>
+    <a className={styles.btn} href={src} target='_blank'>{title}</a>
   </div>
 );
 
