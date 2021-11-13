@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import styles from './Button.module.scss';
 
 
-export const Button = ({className, src, title}) => <a className={clsx(className, styles.root, styles.btn)} href={src}>{title}</a>;
+export const Button = ({className, src, title}) => <a className={clsx(className, styles.root)} href={src}>{title}</a>;
 
 
 Button.propTypes = {
