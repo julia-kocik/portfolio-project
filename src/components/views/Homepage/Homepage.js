@@ -5,21 +5,10 @@ import { OrbitControls, Stars } from '@react-three/drei';
 import { Box } from '../../common/Box/Box';
 import { Sun } from '../../common/Sun/Sun';
 import { Ring} from '../../common/Ring/Ring';
-//import { Plane } from '../../layout/Plane/Plane';
 import { getProjects } from '../../../redux/actions/projectActions';
 import { connect } from 'react-redux';
-
 import clsx from 'clsx';
 import styles from './Homepage.module.scss';
-
-/*
-  const [position, setPosition] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setPosition(true);
-    }, 200);
-  }, []);
-*/
 
 const Component = ({className, getProjects, projects, loading, error}) => {
   useEffect(() => {
@@ -63,18 +52,13 @@ const Component = ({className, getProjects, projects, loading, error}) => {
             ))}
           </Suspense>
           <Stars
-            radius={400} // Radius of the inner sphere (default=100)
-            depth={100} // Depth of area where stars should fit (default=50)
-            count={4000} // Amount of stars (default=5000)
-            factor={15} // Size factor (default=4)
-            saturation={0.2} // Saturation 0-1 (default=0)
-            fade // Faded dots (default=false)
+            radius={400} 
+            depth={100} 
+            count={4000} 
+            factor={15} 
+            saturation={0.2} 
+            fade 
           />
-          {/*
-        <Suspense fallback={null}>
-          <Plane/>
-        </Suspense>
-        */}
         </Canvas>
       )};
     </div>
@@ -82,7 +66,6 @@ const Component = ({className, getProjects, projects, loading, error}) => {
 };
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
   getProjects: PropTypes.func, 
   projects: PropTypes.array,
@@ -103,7 +86,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  //Component as Homepage,
   Container as Homepage,
   Component as HomepageComponent,
 };

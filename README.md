@@ -26,6 +26,7 @@ frontend start:
 - @react-three-fiber
 - @redux
 - @redux-thunk
+- @axios
 - @expressJS
 - @MongoDB
 - @mongoose

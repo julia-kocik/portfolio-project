@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-
 import clsx from 'clsx';
-
 import { connect } from 'react-redux';
 import { getProjectDetails } from '../../../redux/actions/projectActions';
 import {Button } from '../../common/Button/Button';
@@ -68,7 +66,6 @@ const mapDispatchToProps = (dispatch, props) => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  //Component as Project,
   Container as Project,
   Component as ProjectComponent,
 };
