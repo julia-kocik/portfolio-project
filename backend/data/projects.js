@@ -27,10 +27,10 @@ const projects = [
     image: 'https://i.postimg.cc/J4rHN3F7/globe.jpg',
   },
   {
-    title: 'JavaScript Blog',
+    title: 'My Cookbook',
     demo: 'https://julia-kocik.github.io/javascript-blog-2/',
     github: 'https://github.com/julia-kocik/javascript-blog-2', 
-    stack: 'HTML, CSS, Sass, JavaScript',
+    stack: 'HTML, CSS, JavaScript',
     args: [0.5, 100, 100],
     position: [0, 1, 5],
     image: 'https://i.postimg.cc/k4ND8DFt/mars.jpg',
