@@ -35,7 +35,7 @@ const Component = ({className, getProject, project, loading, error}) => {
               <h2 className={styles.stackProjects}>Stack: {project.stack}</h2>
             </div>
             <div className={styles.links}>
-              <Button src={project.demo} title="Demo" className={styles.btnProjects}/>          
+              <Button src={project.demo} title="Live" className={styles.btnProjects}/>          
               <Button src={project.github} title="GitHub" className={styles.btnProjects}/> 
             </div>         
           </div>
