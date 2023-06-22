@@ -1,6 +1,5 @@
 ## PORTFOLIO
-
-https://shrouded-beyond-46081.herokuapp.com/
+## https://juliakocik-portfolio.com/
 
 ## How to use
 
